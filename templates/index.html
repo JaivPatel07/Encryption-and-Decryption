@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encryption App</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Online Encryptor & Decryptor</h1>
+
+    <textarea id="message" placeholder="Enter your message"></textarea>
+
+    <input type="text" id="key" placeholder="Enter secret key">
+
+    <div class="buttons">
+        <button onclick="encrypt()">Encrypt</button>
+        <button onclick="decrypt()">Decrypt</button>
+    </div>
+
+    <h3>Result:</h3>
+    <textarea id="result" readonly></textarea>
+</div>
+
+<script>
+async function encrypt() {
+    let message = document.getElementById("message").value;
+    let key = document.getElementById("key").value;
+
+    let res = await fetch("/encrypt", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message, key})
+    });
+
+    let data = await res.json();
+    document.getElementById("result").value = data.result;
+}
+
+async function decrypt() {
+    let message = document.getElementById("message").value;
+    let key = document.getElementById("key").value;
+
+    let res = await fetch("/decrypt", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({message, key})
+    });
+
+    let data = await res.json();
+    document.getElementById("result").value = data.result;
+}
+</script>
+
+</body>
+</html>

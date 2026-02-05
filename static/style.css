@@ -1,0 +1,80 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Main Box */
+.container {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Title */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Text areas */
+textarea {
+    width: 100%;
+    height: 90px;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: 14px;
+}
+
+/* Input */
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+}
+
+/* Encrypt Button */
+button:first-child {
+    background: #28a745;
+}
+
+/* Decrypt Button */
+button:last-child {
+    background: #007bff;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Result label */
+h3 {
+    margin-top: 10px;
+}
